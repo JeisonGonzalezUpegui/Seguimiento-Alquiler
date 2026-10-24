@@ -1,0 +1,22 @@
+public class Turista {
+    private String visa;
+
+    public Turista(String visa) {
+        this.visa = visa;
+    }
+
+    public String getVisa() {
+        return visa;
+    }
+
+    public void setVisa(String visa) {
+        this.visa = visa;
+    }
+
+    @Override
+    public String toString() {
+        return "Turista{" +
+                "visa='" + visa + '\'' +
+                '}';
+    }
+}
