@@ -2,7 +2,7 @@ public abstract class Vehiculo {
     private String placa;
     private String marca;
     private String modelo;
-    private int anioFabricacion;
+    private int añoFabricacion;
     private double tarifaBase;
     private Estado4 estado;
 
@@ -10,7 +10,7 @@ public abstract class Vehiculo {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
-        this.anioFabricacion = anioFabricacion;
+        this.añoFabricacion = anioFabricacion;
         this.tarifaBase = tarifaBase;
         this.estado = estado;
     }
@@ -40,11 +40,11 @@ public abstract class Vehiculo {
     }
 
     public int getAnioFabricacion() {
-        return anioFabricacion;
+        return añoFabricacion;
     }
 
     public void setAnioFabricacion(int anioFabricacion) {
-        this.anioFabricacion = anioFabricacion;
+        this.añoFabricacion = anioFabricacion;
     }
 
     public double getTarifaBase() {
@@ -69,7 +69,7 @@ public abstract class Vehiculo {
         System.out.println("Placa: " + placa);
         System.out.println("Marca: " + marca);
         System.out.println("Modelo: " + modelo);
-        System.out.println("Año de fabricación: " + anioFabricacion);
+        System.out.println("Año de fabricación: " + añoFabricacion);
         System.out.println("Tarifa base: " + tarifaBase);
         System.out.println("Estado: " + estado);
     }
