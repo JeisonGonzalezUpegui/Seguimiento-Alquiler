@@ -1,14 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
 public class Vehiculo {
-    //-placa:String
-    //- marca:String
-    //- modelo:String
-    //-añoFabricacion:String
-    //-tarifaBase:double
     private String placa;
     private String marca;
     private String modelo;
     private String añoFabricacion;
     private double tarifaBase;
+    private List<Vehiculo> vehiculos = new ArrayList<>();
 
     public Vehiculo(String placa, String marca, String modelo, String añoFabricacion, double tarifaBase) {
         this.placa = placa;
@@ -68,4 +66,10 @@ public class Vehiculo {
                 ", tarifaBase=" + tarifaBase +
                 '}';
     }
-}
+    public void imprimirVehiculos() {
+        for (Vehiculo v : vehiculos) {
+            System.out.println(v.toString());
+        }
+    }
+    }
+

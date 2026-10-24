@@ -33,12 +33,10 @@ public class Cliente {
         this.documentoIdentidad = documentoIdentidad;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                ", correoElectronico='" + correoElectronico + '\'' +
-                ", documentoIdentidad='" + documentoIdentidad + '\'' +
-                '}';
+    public void mostrarDatos() {
+        System.out.println("----Datos del cliente----");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Correo: " + correoElectronico);
+        System.out.println("Documento: " + documentoIdentidad);
     }
 }
