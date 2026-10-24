@@ -1,7 +1,8 @@
-public class Camioneta {
+public class Camioneta extends Vehiculo {
     private double capacidad;
 
-    public Camioneta(double capacidad) {
+    public Camioneta(String placa, String marca, String modelo, int anioFabricacion, double tarifaBase, Estado4 estado, double capacidad) {
+        super(placa, marca, modelo, anioFabricacion, tarifaBase, estado);
         this.capacidad = capacidad;
     }
 
@@ -14,9 +15,14 @@ public class Camioneta {
     }
 
     @Override
-    public String toString() {
-        return "Camioneta{" +
-                "capacidad=" + capacidad +
-                '}';
+    public double calcularAlquiler(int dias) {
+        return (getTarifaBase() + 50000) * dias;
+    }
+
+    @Override
+    public void mostrarDatos() {
+        System.out.println("----Datos de la camioneta----");
+        super.mostrarDatos();
+        System.out.println("Capacidad: " + capacidad);
     }
 }

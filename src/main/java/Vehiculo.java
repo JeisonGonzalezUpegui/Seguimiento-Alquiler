@@ -1,19 +1,18 @@
-import java.util.ArrayList;
-import java.util.List;
-public class Vehiculo {
+public abstract class Vehiculo {
     private String placa;
     private String marca;
     private String modelo;
-    private String añoFabricacion;
+    private int anioFabricacion;
     private double tarifaBase;
-    private List<Vehiculo> vehiculos = new ArrayList<>();
+    private Estado4 estado;
 
-    public Vehiculo(String placa, String marca, String modelo, String añoFabricacion, double tarifaBase) {
+    public Vehiculo(String placa, String marca, String modelo, int anioFabricacion, double tarifaBase, Estado4 estado) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
-        this.añoFabricacion = añoFabricacion;
+        this.anioFabricacion = anioFabricacion;
         this.tarifaBase = tarifaBase;
+        this.estado = estado;
     }
 
     public String getPlaca() {
@@ -40,12 +39,12 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public String getAñoFabricacion() {
-        return añoFabricacion;
+    public int getAnioFabricacion() {
+        return anioFabricacion;
     }
 
-    public void setAñoFabricacion(String añoFabricacion) {
-        this.añoFabricacion = añoFabricacion;
+    public void setAnioFabricacion(int anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
     }
 
     public double getTarifaBase() {
@@ -56,20 +55,22 @@ public class Vehiculo {
         this.tarifaBase = tarifaBase;
     }
 
-    @Override
-    public String toString() {
-        return "Vehiculo{" +
-                "placa='" + placa + '\'' +
-                ", marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", añoFabricacion='" + añoFabricacion + '\'' +
-                ", tarifaBase=" + tarifaBase +
-                '}';
-    }
-    public void imprimirVehiculos() {
-        for (Vehiculo v : vehiculos) {
-            System.out.println(v.toString());
-        }
-    }
+    public Estado4 getEstado() {
+        return estado;
     }
 
+    public void setEstado(Estado4 estado) {
+        this.estado = estado;
+    }
+
+    public abstract double calcularAlquiler(int dias);
+
+    public void mostrarDatos() {
+        System.out.println("Placa: " + placa);
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Año de fabricación: " + anioFabricacion);
+        System.out.println("Tarifa base: " + tarifaBase);
+        System.out.println("Estado: " + estado);
+    }
+}

@@ -1,7 +1,8 @@
-public class Turista {
+public class Turista extends Cliente {
     private String visa;
 
-    public Turista(String visa) {
+    public Turista(String nombre, String correoElectronico, String documentoIdentidad, String visa) {
+        super(nombre, correoElectronico, documentoIdentidad);
         this.visa = visa;
     }
 
@@ -14,9 +15,11 @@ public class Turista {
     }
 
     @Override
-    public String toString() {
-        return "Turista{" +
-                "visa='" + visa + '\'' +
-                '}';
+    public void mostrarDatos() {
+        System.out.println("----Datos del turista----");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Correo: " + getCorreoElectronico());
+        System.out.println("Documento: " + getDocumentoIdentidad());
+        System.out.println("Visa: " + visa);
     }
 }

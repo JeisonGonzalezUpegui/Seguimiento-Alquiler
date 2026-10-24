@@ -1,10 +1,6 @@
 import java.time.LocalDate;
+
 public class Alquiler {
-    //-codigo:String
-    //-fecha:LocalDate
-    //-cliente: Cliente
-    //-vehiculo: Vehiculo
-    //-cantidadDias: Int
     private String codigo;
     private LocalDate fecha;
     private Cliente cliente;
@@ -59,14 +55,17 @@ public class Alquiler {
         this.cantidadDias = cantidadDias;
     }
 
-    @Override
-    public String toString() {
-        return "Alquiler{" +
-                "codigo='" + codigo + '\'' +
-                ", fecha=" + fecha +
-                ", cliente=" + cliente +
-                ", vehiculo=" + vehiculo +
-                ", cantidadDias=" + cantidadDias +
-                '}';
+    public double calcularCosto() {
+        return vehiculo.calcularAlquiler(cantidadDias);
+    }
+
+    public void mostrarDatos() {
+        System.out.println("----Datos del alquiler----");
+        System.out.println("Código: " + codigo);
+        System.out.println("Fecha: " + fecha);
+        System.out.println("Cantidad de días: " + cantidadDias);
+        cliente.mostrarDatos();
+        vehiculo.mostrarDatos();
+        System.out.println("Costo total: " + calcularCosto());
     }
 }

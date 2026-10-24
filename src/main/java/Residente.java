@@ -1,7 +1,8 @@
-public class Residente {
+public class Residente extends Cliente {
     private String direccionResidencia;
 
-    public Residente(String direccionResidencia) {
+    public Residente(String nombre, String correoElectronico, String documentoIdentidad, String direccionResidencia) {
+        super(nombre, correoElectronico, documentoIdentidad);
         this.direccionResidencia = direccionResidencia;
     }
 
@@ -14,9 +15,11 @@ public class Residente {
     }
 
     @Override
-    public String toString() {
-        return "Residente{" +
-                "direccionResidencia='" + direccionResidencia + '\'' +
-                '}';
+    public void mostrarDatos() {
+        System.out.println("----Datos del residente----");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Correo: " + getCorreoElectronico());
+        System.out.println("Documento: " + getDocumentoIdentidad());
+        System.out.println("Dirección de residencia: " + direccionResidencia);
     }
 }
